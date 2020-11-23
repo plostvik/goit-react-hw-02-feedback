@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import styles from './FriendList.module.css';
 import Statistics from './components/Statistics/Statistics.js';
 import FeedbackOptions from './components/FeedbackOptions/FeedbackOptions';
 import Section from './components/Section/Section.js';
@@ -16,11 +15,11 @@ export default class App extends Component {
   };
 
   addReview = e => {
-    switch (e.target.textContent) {
-      case 'Good':
+    switch (e.target.name) {
+      case 'good':
         this.setState({ good: this.state.good + 1 });
         break;
-      case 'Neutral':
+      case 'neutral':
         this.setState({ neutral: this.state.neutral + 1 });
         break;
       default:
