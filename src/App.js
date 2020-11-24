@@ -15,16 +15,9 @@ export default class App extends Component {
   };
 
   addReview = e => {
-    switch (e.target.name) {
-      case 'good':
-        this.setState({ good: this.state.good + 1 });
-        break;
-      case 'neutral':
-        this.setState({ neutral: this.state.neutral + 1 });
-        break;
-      default:
-        this.setState({ bad: this.state.bad + 1 });
-    }
+    this.setState(prevState => ({
+      [e.target.name]: prevState[e.target.name] + 1,
+    }));
   };
 
   countTotalFeedback = () => {
